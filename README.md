@@ -42,10 +42,8 @@ THEN I am able to successfully create, update, and delete data in my database
 <!-- ----------------------- -->
 
 [Node MySQL2](https://www.npmjs.com/package/mysql2),
-npm i mysql2
 
 [Inquierer.js](https://www.npmjs.com/package/inquirer),
-npm i inquirer
 
 [Sequelize](https://www.npmjs.com/package/sequelize),
 
