@@ -50,21 +50,34 @@ router.post("/", (req, res) => {
     res.json(categoryData);
   });
 
-// update a category by its `id` value
-router.put("/:id", (req, res) => {
-  category.update(req.body, {
-    where: {
-      id: req.params.id,
-    },
-  })
-    .then((categoryData) => { res.json(categoryData) })
-    .catch ((err) => {
-    console.log(err);
-    res.status(500).json(err);
+  // update a category by its `id` value
+  router.put("/:id", (req, res) => {
+    category
+      .update(req.body, {
+        where: {
+          id: req.params.id,
+        },
+      })
+      .then((categoryData) => {
+        res.json(categoryData);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
+  // delete a category by its `id` value
+  router.delete("/:id", (req, res) => {
+    try {
+      const catagoryData = await Category.fDestroy({
+        where: [{ id: req.params.id }, { model: Car }],
+      });
+      res.status(200).json(driverData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
   });
 });
-
-// delete a category by its `id` value
-router.delete("/:id", (req, res) => {});
 
 module.exports = router;
