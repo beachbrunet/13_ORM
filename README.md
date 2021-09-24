@@ -47,7 +47,9 @@ THEN I am able to successfully create, update, and delete data in my database
 
 [Sequelize](https://www.npmjs.com/package/sequelize),
 
-[dotenv](https://www.npmjs.com/package/dotenv)
+[dotenv](https://www.npmjs.com/package/dotenv),
+
+[Api ref](https://sequelize.org/master/manual/model-querying-finders.html)
 
 ## Heroku
 
