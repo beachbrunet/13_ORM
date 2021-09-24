@@ -1,6 +1,3 @@
-const router = require("express").Router();
-const { Category, Product } = require("../../models");
-
 // example code from 13/11
 // router.get('/', async (req, res) => {
 //   try {
@@ -12,7 +9,9 @@ const { Category, Product } = require("../../models");
 //     res.status(500).json(err);
 //   }
 // });
-// The `/api/categories` endpoint
+const router = require("express").Router();
+const { Category, Product } = require("../../models");
+
 router.get("/", (req, res) => {
   // find all categories
   // be sure to include its associated Products
@@ -65,21 +64,20 @@ router.post("/", (req, res) => {
   });
 });
 
-  // delete a category by its `id` value
-  router.delete("/:id", (req, res) => {
-    try {
-      const catagoryData = await Category.fDestroy({
-        where: { id: req.params.id },
-      });
-      if (!categoryData) {
-        res.status(404).json({ message: "Not found with this id" });
-        return;
-      }
-      res.status(200).json(categoryData);
-    } catch (err) {
-      res.status(500).json(err);
+// delete a category by its `id` value
+router.delete("/:id", (req, res) => {
+  try {
+    const catagoryData = await Category.fDestroy({
+      where: { id: req.params.id },
+    });
+    if (!categoryData) {
+      res.status(404).json({ message: "Not found with this id" });
+      return;
     }
-  });
+    res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
