@@ -37,25 +37,44 @@ THEN I am able to successfully create, update, and delete data in my database
 
 ![Screen Shot]()
 
+## How to Get started
+
+```
+First you will need to clone the repository and install all the required dependancies.
+
+-npm install
+-create a .env file that contains:
+DB_USER='Your User Name'
+DB_PW='your Password'
+DB_NAME='ecommerce_db'
+
+-Then the following packages below in resources
+
+Lastly you would want to run npm start and use a program called "Insomnia".
+
+```
+
 ## Resources
 
 <!-- ----------------------- -->
 
-[Node MySQL2](https://www.npmjs.com/package/mysql2),
+[Node MySQL2](https://www.npmjs.com/package/mysql2)
 
-[Inquierer.js](https://www.npmjs.com/package/inquirer),
+ <!-- npm i mysql2 -->
 
-[Sequelize](https://www.npmjs.com/package/sequelize),
+[Inquierer.js](https://www.npmjs.com/package/inquirer)
 
-[dotenv](https://www.npmjs.com/package/dotenv),
+<!-- npm i inquirer -->
+
+[Sequelize](https://www.npmjs.com/package/sequelize)
+
+<!-- npm i sequelize -->
+
+[dotenv](https://www.npmjs.com/package/dotenv)
+
+ <!-- npm i dotenv -->
 
 [Api ref](https://sequelize.org/master/manual/model-querying-finders.html)
-
-## Heroku
-
-<!-- ----------------------- -->
-
-[Heroku](
 
 ## Contributions and Contact Information
 
