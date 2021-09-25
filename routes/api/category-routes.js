@@ -67,7 +67,7 @@ router.post("/", (req, res) => {
 // delete a category by its `id` value
 router.delete("/:id", (req, res) => {
   try {
-    const catagoryData = await Category.fDestroy({
+    const catagoryData = await Category.destroy({
       where: { id: req.params.id },
     });
     if (!categoryData) {
