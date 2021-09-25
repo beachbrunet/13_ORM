@@ -48,17 +48,12 @@ tag.create({
   tag_name:req.body.tag_name,})
   res.status(200).json(categoryData);
 })
+// fix here
 res.json(tagData);
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
-
-
-
-
-
-
 
 // update a tag's name by its `id` value
 router.put("/:id", (req, res) => {
