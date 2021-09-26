@@ -24,7 +24,7 @@ router.get("/", async (req, res) => {
     });
     res.status(200).json(productData);
   } catch (err) {
-    res.status(400).json(productData);
+    res.status(500).json(err);
   }
 });
 
@@ -73,7 +73,7 @@ router.post("/", async (req, res) => {
     .then((productTagIds) => res.status(200).json(productTagIds))
     .catch((err) => {
       console.log(err);
-      res.status(400).json(err);
+      res.status(500).json(err);
     });
 });
 
@@ -115,7 +115,7 @@ router.put("/:id", async (req, res) => {
     .then((updatedProductTags) => res.json(updatedProductTags))
     .catch((err) => {
       // console.log(err);
-      res.status(400).json(err);
+      res.status(500).json(err);
     });
 });
 

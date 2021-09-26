@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
     });
     res.status(200).json(categoryData);
   } catch (err) {
-    res.status(400).json(categoryData);
+    res.status(500).json(err);
   }
 });
 
@@ -50,7 +50,7 @@ router.post("/", async (req, res) => {
   // update a category by its `id` value
   router.put("/:id", (req, res) => {
     try {
-      const catagoryData = await Category.destroy({
+      const catagoryData = Category.destroy({
         where: { id: req.params.id },
       });
       if (!categoryData) {

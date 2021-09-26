@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
     });
     res.status(200).json(tagData);
   } catch (err) {
-    res.status(400).json(tagData);
+    res.status(400).json(err);
   }
 });
 
