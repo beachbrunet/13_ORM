@@ -36,7 +36,8 @@ THEN I am able to successfully create, update, and delete data in my database
 <!-- ----------------------- -->
 
 ![Screen Shot](images/listening.png),
-![Screen Shot](images/Dependencies.png)
+![Screen Shot](images/Dependencies.png),
+![Initial run](images/Running.mov)
 
 ## How to Get started
 
