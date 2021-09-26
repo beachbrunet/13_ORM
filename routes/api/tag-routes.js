@@ -17,7 +17,7 @@ const { Tag, Product, ProductTag } = require("../../models");
 // be sure to include its associated Product data
 router.get("/", async (req, res) => {
   try {
-    const tagData = await Tag.findAll({
+    const tagData = Tag.findAll({
       include: [{ model: Product, through: ProductTag }],
     });
     res.status(200).json(tagData);
@@ -30,7 +30,7 @@ router.get("/", async (req, res) => {
 // be sure to include its associated Product data
 router.get("/:id", async (req, res) => {
   try {
-    const tagData = await tag.findByPk(req.params.id, {
+    const tagData = tag.findByPk(req.params.id, {
       include: [{ model: Product, through: ProductTag }],
     });
     if (!tagData) {
@@ -82,7 +82,7 @@ router.put("/:id", async (req, res) => {
 // delete on tag by its `id` value
 router.delete("/:id", (req, res) => {
   try {
-    const tagData = await tag.destroy({
+    const tagData = tag.destroy({
       where: { id: req.params.id },
     });
     if (!tagData) {

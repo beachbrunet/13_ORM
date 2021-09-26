@@ -82,3 +82,5 @@ Lastly you would want to run npm start and use a program called "Insomnia".
 
 Catherine Cox
 ccox.034@gmail.com
+
+<!-- http://localhost:3001/api/categories -->

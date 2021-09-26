@@ -19,7 +19,7 @@ const { Product, Category, Tag, ProductTag } = require("../../models");
 // be sure to include its associated Category and Tag data
 router.get("/", (req, res) => {
   try {
-    const ProductData = await product.findAll({
+    const ProductData = product.findAll({
       include: [{ model: Tag }, { model: Category }],
     });
     res.status(200).json(productData);
@@ -33,7 +33,7 @@ router.get("/", (req, res) => {
 // be sure to include its associated Category and Tag data
 router.get("/:id", (req, res) => {
   try {
-    const ProductData = await category.findByPk(req.params.id, {
+    const ProductData = category.findByPk(req.params.id, {
       include: [{ model: Tag }, { model: Category }, { model: ProductTag }],
     });
     if (!categoryData) {
@@ -122,7 +122,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   // delete one product by its `id` value
   try {
-    const productData = await Category.destroy({
+    const productData = Category.destroy({
       where: { id: req.params.id },
     });
     if (!productData) {
