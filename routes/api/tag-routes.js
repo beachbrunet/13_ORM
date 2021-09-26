@@ -47,14 +47,12 @@ router.get("/:id", async (req, res) => {
 router.post("/", (req, res) => {
 tag.create({
   tag_name:req.body.tag_name,})
-  res.status(200).json(categoryData);
+.then(tagData => res.json(tagData))
+.catch(err => {
+  console.log(err);
+  res.status(500).json(err);
 })
-// fix here
-res.json(tagData);
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+
 
 // update a tag's name by its `id` value
 router.put("/:id", (req, res) => {
@@ -75,6 +73,7 @@ router.put("/:id", (req, res) => {
   })
   .catch ((err) => {
     res.status(500).json(err);
+  });
 });
 
 // delete on tag by its `id` value
